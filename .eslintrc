@@ -37,7 +37,7 @@
     ],
     "quotes": [
       "error",
-      "duoble",
+      "single",
       {"allowTemplateLiterals": true}
     ],
     "semi": [
