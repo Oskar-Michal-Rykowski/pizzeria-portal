@@ -10,7 +10,9 @@ import Waiter from './components/views/Waiter/Waiter';
 
 function App() {
   return (
-    <BrowserRouter basename={'/panel'}>
+    <BrowserRouter
+    // basename={'/panel'}
+    >
       <MainLayout>
         <Switch>
           <Route

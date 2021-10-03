@@ -16,7 +16,7 @@ const PageNav = () => (
     <NavLink to={`${process.env.PUBLIC_URL}/tables`} activeClassName="active">
       Tables
     </NavLink>
-    <NavLink to={`${process.env.PUBLIC_URL}/Waiter`} activeClassName="active">
+    <NavLink to={`${process.env.PUBLIC_URL}/waiter`} activeClassName="active">
       Waiter
     </NavLink>
   </nav>
