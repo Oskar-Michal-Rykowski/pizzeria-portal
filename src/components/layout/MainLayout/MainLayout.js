@@ -2,19 +2,24 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import { Toolbar } from '@mui/material';
+import Container from '@mui/material/Container';
 
 import PageNav from '../PageNav/PageNav';
 
 const MainLayout = ({ children }) => (
   <div>
     <AppBar>
-      <Toolbar>
-        <PageNav />
-      </Toolbar>
+      <Container maxWidth="lg">
+        <Toolbar disableGutters>
+          <PageNav />
+        </Toolbar>
+      </Container>
     </AppBar>
-    <Toolbar />
 
-    <div>{children}</div>
+    <Container maxWidth="lg">
+      <Toolbar />
+      {children}
+    </Container>
   </div>
 );
 
