@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import { Toolbar } from '@mui/material';
-import Container from '@mui/material/Container';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Container from '@material-ui/core/Container';
 
 import PageNav from '../PageNav/PageNav';
 

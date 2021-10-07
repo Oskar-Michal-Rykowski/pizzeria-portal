@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { StylesProvider } from '@mui/styles';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { StylesProvider } from '@material-ui/styles';
+import { createTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import Dashboard from './components/views/Dashboard/Dashboard';
