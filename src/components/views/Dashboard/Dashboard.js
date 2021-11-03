@@ -1,8 +1,7 @@
 import React from 'react';
-import styles from './Dashboard.scss';
+import styles from './Dashboard.module.scss';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -18,28 +17,27 @@ const demoContent = [
   { id: '6', type: 'paid', time: '13:30' },
 ];
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    padding: theme.spacing(6),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   paper: {
+//     padding: theme.spacing(6),
+//     textAlign: 'center',
+//     color: theme.palette.text.secondary,
+//   },
+// }));
 
 const Dashboard = () => {
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={styles.root}>
       <h1>Statistics:</h1>
       <Grid container spacing={3}>
         <Grid item xs={6}>
-          <Paper className={classes.paper}>Local orders: 6</Paper>
+          <Paper className={styles.paper}>Local orders: 6</Paper>
         </Grid>
         <Grid item xs={6}>
-          <Paper className={classes.paper}>Remote orders: 6</Paper>
+          <Paper className={styles.paper}>Remote orders: 6</Paper>
         </Grid>
       </Grid>
-      <h1>Reservations:</h1>
+      <h1>Today:</h1>
       <Table>
         <TableHead>
           <TableRow>
