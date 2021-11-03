@@ -3,3 +3,22 @@
 .component {
   padding: $base-size;
 }
+
+.root {
+  color: orange;
+}
+.paper {
+  height: 200px;
+  width: 100px;
+  text-align: center;
+  color: orange;
+}
+// .control {
+//   // padding: theme.spacing(2);
+// }
+
+// .MuiPaper-root {
+//   .root {
+//     height: 100px;
+//   }
+// }
