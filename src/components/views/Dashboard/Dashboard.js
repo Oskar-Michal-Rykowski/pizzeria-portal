@@ -17,14 +17,6 @@ const demoContent = [
   { id: '6', type: 'paid', time: '13:30' },
 ];
 
-// const useStyles = makeStyles((theme) => ({
-//   paper: {
-//     padding: theme.spacing(6),
-//     textAlign: 'center',
-//     color: theme.palette.text.secondary,
-//   },
-// }));
-
 const Dashboard = () => {
   return (
     <div className={styles.root}>
