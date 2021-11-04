@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -126,8 +126,8 @@ const Tables = () => (
         className={styles.button}
         variant="contained"
         color="primary"
-        component={RouterLink}
-        to={`${process.env.PUBLIC_URL}/tables/booking/new`}
+        component={NavLink}
+        to={`${process.env.PUBLIC_URL}/tables/booking-new`}
       >
         New Reservation
       </Button>
@@ -135,8 +135,8 @@ const Tables = () => (
         className={styles.button}
         variant="contained"
         color="primary"
-        component={RouterLink}
-        to={`${process.env.PUBLIC_URL}/tables/events/new`}
+        component={NavLink}
+        to={`${process.env.PUBLIC_URL}/tables/events-new`}
       >
         New Event
       </Button>
