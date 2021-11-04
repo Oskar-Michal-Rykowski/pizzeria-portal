@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
@@ -15,15 +14,6 @@ export default function TablesBookingNew() {
   const handleChange = (event) => {
     setAge(event.target.value);
   };
-
-  var hours = [],
-    i,
-    j;
-  for (i = 8; i < 20; i++) {
-    for (j = 0; j < 2; j++) {
-      hours.push(i + ':' + (j === 0 ? '00' : 30 * j));
-    }
-  }
 
   return (
     <div className={styles.component}>
