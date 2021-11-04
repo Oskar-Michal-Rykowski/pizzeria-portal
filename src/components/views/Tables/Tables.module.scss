@@ -5,3 +5,23 @@
   color: grey;
   text-align: center;
 }
+
+.table {
+  margin-bottom: 30px;
+  .link {
+    text-decoration: none;
+    color: orange;
+  }
+}
+
+.buttons {
+  height: 100px;
+  .button {
+    margin: 10px;
+  }
+}
+
+.picker {
+  width: 200px;
+  margin: 20px;
+}
