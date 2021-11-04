@@ -32,9 +32,9 @@ function getReservation(hour, table) {
   for (let reservation of reservations) {
     if (hour === reservation.time && table === reservation.table) {
       reservationId = reservation.id;
-    }
-    if (reservation.type === 'event') {
-      reservationType = 'events';
+      if (reservation.type === 'event') {
+        reservationType = 'events';
+      }
     }
   }
   return (
