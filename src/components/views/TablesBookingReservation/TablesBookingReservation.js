@@ -9,12 +9,6 @@ import Button from '@material-ui/core/Button';
 import styles from './TablesBookingReservation.module.scss';
 
 export default function TablesBookingReservation() {
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
   function getIdfromLink() {
     var viewURL = window.location.href;
     const id = viewURL.split('/').at(-1);
@@ -41,7 +35,6 @@ export default function TablesBookingReservation() {
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
             value={1}
-            onChange={handleChange}
             label="Table"
           >
             <MenuItem value="">
@@ -84,7 +77,6 @@ export default function TablesBookingReservation() {
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
             value={1}
-            onChange={handleChange}
             label="Duration"
           >
             <MenuItem value="">

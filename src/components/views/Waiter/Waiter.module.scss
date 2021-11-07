@@ -3,3 +3,12 @@
 .component {
   padding: $base-size;
 }
+
+.buttons {
+  height: 100px;
+  text-align: center;
+  // padding-left: 40%;
+  .button {
+    margin: 30px;
+  }
+}
