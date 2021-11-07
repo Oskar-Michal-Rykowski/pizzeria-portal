@@ -44,12 +44,13 @@
   - zamówienie (zamówione produkty z opcjami i cenę)
   - kwotę zamówienia
 - `/waiter/order/:id`
-  - wyświetlanie listy zamówień w kolejności ich złożenia
-  - lista musi zawierać:
-    - numer stolika (lub zamówienia zdalnego)
-    - pełne informacje dot. zamówionych dań
-  - na liście musi być możliwość oznaczenia zamówienia jako zrealizowanego
+  - jak powyżej
 
 # Widok kouchni
 
 - `/kitchen`
+- wyświetlanie listy zamówień w kolejności ich złożenia
+  - lista musi zawierać:
+    - numer stolika (lub zamówienia zdalnego)
+    - pełne informacje dot. zamówionych dań
+  - na liście musi być możliwość oznaczenia zamówienia jako zrealizowanego

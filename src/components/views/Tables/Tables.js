@@ -11,7 +11,7 @@ import TextField from '@material-ui/core/TextField';
 import styles from './Tables.module.scss';
 
 const reservations = [
-  { id: '12345', time: '8:00', duration: 2, table: 1, type: 'reservation' },
+  { id: '12345', time: '8:00', duration: 1, table: 1, type: 'reservation' },
   { id: '12441', time: '8:00', duration: 2, table: 2, type: 'event' },
   { id: '55555', time: '8:30', duration: 2, table: 3, type: 'event' },
   { id: '66666', time: '9:00', duration: 2, table: 2, type: 'reservation' },
@@ -25,10 +25,30 @@ const reservations = [
   { id: '66666', time: '17:30', duration: 2, table: 1, type: 'reservation' },
 ];
 
+const newReservations = [];
+
+for (let reservation of reservations) {
+  newReservations.push(reservation);
+  // if (reservation.duration) {
+  //   //podzielić time na dwie liczby (usunąć string)
+  //   const timeNumbers = parseInt(reservation.time.split(':'));
+  //   //const minuts = pierwsza liczba + 30 * reservation.duration
+  //   const minuts = parseInt(timeNumbers[1]);
+  //   // const hours = parseInt(timeNumbers[0]);
+
+  //   const fullMinuts = minuts + 30 * reservation.duration;
+  //   console.log(fullMinuts);
+
+  //   //reservation.time =  pierwsza liczba * (minuts / 60 (bez reszty)) + ':' + minuts / 60 (reszta)
+  //   const firstNumber = fullMinuts / 60;
+  //   reservation.time = firstNumber + ':' + (fullMinuts % 60);
+  // }
+}
+
 function getReservation(hour, table) {
   let reservationId = null;
   let reservationType = 'booking';
-  for (let reservation of reservations) {
+  for (let reservation of newReservations) {
     if (hour === reservation.time && table === reservation.table) {
       reservationId = reservation.id;
       if (reservation.type === 'event') {
