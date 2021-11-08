@@ -220,11 +220,7 @@ export default function WaiterOrderNew() {
             <FormControlLabel
               key={option.label}
               control={
-                <Checkbox
-                  checked={option.default}
-                  // onChange={handleChange3}
-                  name={option.label}
-                />
+                <Checkbox checked={option.default} name={option.label} />
               }
               label={`${option.label} $${option.price}`}
             ></FormControlLabel>

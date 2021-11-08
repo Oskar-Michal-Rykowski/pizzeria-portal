@@ -23,7 +23,7 @@ export default function TablesBookingReservation() {
           className={styles.input}
           id="outlined-disabled"
           variant="outlined"
-          label="Read Only"
+          label="ID"
           defaultValue={getIdfromLink()}
           InputProps={{
             readOnly: true,
