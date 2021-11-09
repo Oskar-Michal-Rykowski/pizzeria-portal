@@ -9,10 +9,10 @@ import Button from '@material-ui/core/Button';
 import styles from './TablesEventReservation.module.scss';
 
 export default function TablesEventReservation() {
-  const [age, setAge] = React.useState('');
+  const [value, setValue] = React.useState('');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setValue(event.target.value);
   };
 
   function getIdfromLink() {

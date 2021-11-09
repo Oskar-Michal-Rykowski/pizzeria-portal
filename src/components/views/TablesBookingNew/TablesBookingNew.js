@@ -9,10 +9,10 @@ import Button from '@material-ui/core/Button';
 import styles from './TablesBookingNew.module.scss';
 
 export default function TablesBookingNew() {
-  const [age, setAge] = React.useState('');
+  const [value, setValue] = React.useState('');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setValue(event.target.value);
   };
 
   return (
@@ -30,7 +30,7 @@ export default function TablesBookingNew() {
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
-            value={age}
+            value={value}
             onChange={handleChange}
             label="Table"
           >
@@ -73,7 +73,7 @@ export default function TablesBookingNew() {
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
-            value={age}
+            value={value}
             onChange={handleChange}
             label="Duration"
           >

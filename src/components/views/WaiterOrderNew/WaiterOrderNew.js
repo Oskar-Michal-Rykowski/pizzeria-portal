@@ -190,15 +190,15 @@ const products = [
 ];
 
 export default function WaiterOrderNew() {
-  const [age, setAge] = React.useState('');
+  const [value, setValue] = React.useState('');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setValue(event.target.value);
   };
 
   const [expanded, setExpanded] = React.useState('');
 
-  const handleChange2 = (panel) => (event, newExpanded) => {
+  const handleChangeExpanded = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 
@@ -256,7 +256,7 @@ export default function WaiterOrderNew() {
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
-            value={age}
+            value={value}
             onChange={handleChange}
             label="Table"
           >
@@ -299,7 +299,7 @@ export default function WaiterOrderNew() {
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
-            value={age}
+            value={value}
             onChange={handleChange}
             label="Duration"
           >
@@ -321,7 +321,7 @@ export default function WaiterOrderNew() {
             key={product.id}
             square
             expanded={expanded === product.id}
-            onChange={handleChange2(product.id)}
+            onChange={handleChangeExpanded(product.id)}
           >
             <MuiAccordionSummary
               aria-controls="panel1d-content"
@@ -342,7 +342,7 @@ export default function WaiterOrderNew() {
                   <Select
                     labelId="demo-simple-select-outlined-label"
                     id="demo-simple-select-outlined"
-                    value={age}
+                    value={value}
                     onChange={handleChange}
                     label="Amount"
                   >
