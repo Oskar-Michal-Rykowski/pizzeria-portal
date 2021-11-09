@@ -40,7 +40,7 @@ export default function TablesEventReservation() {
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
-            value={1}
+            value={value}
             onChange={handleChange}
             label="Table"
           >
@@ -83,7 +83,7 @@ export default function TablesEventReservation() {
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
-            value={1}
+            value={value}
             onChange={handleChange}
             label="Duration"
           >
