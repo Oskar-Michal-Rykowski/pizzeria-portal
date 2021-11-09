@@ -1,0 +1,26 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  font-family: Roboto;
+  color: grey;
+  text-align: center;
+}
+
+.root {
+  min-width: 300px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 14;
+}
+
+.order {
+  display: flex;
+  .each {
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+  }
+}
