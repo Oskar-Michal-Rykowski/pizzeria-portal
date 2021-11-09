@@ -11,25 +11,77 @@ import TextField from '@material-ui/core/TextField';
 import styles from './Tables.module.scss';
 
 const reservations = [
-  { id: '12345', time: '8:00', table: 1, type: 'reservation' },
-  { id: '12441', time: '8:00', table: 2, type: 'event' },
-  { id: '55555', time: '8:30', table: 3, type: 'event' },
-  { id: '66666', time: '9:00', table: 2, type: 'reservation' },
-  { id: '88888', time: '9:30', table: 1, type: 'event' },
-  { id: '33333', time: '11:30', table: 2, type: 'event' },
-  { id: '55553', time: '13:00', table: 3, type: 'event' },
-  { id: '12222', time: '14:00', table: 3, type: 'reservation' },
-  { id: '12344', time: '14:30', table: 1, type: 'event' },
-  { id: '23232', time: '15:30', table: 2, type: 'reservation' },
-  { id: '54545', time: '16:00', table: 1, type: 'event' },
-  { id: '66666', time: '17:30', table: 1, type: 'reservation' },
+  {
+    id: '12345',
+    time: '08:00',
+    duration: '01:30',
+    table: 1,
+    type: 'reservation',
+  },
+  { id: '12441', time: '08:00', duration: '01:00', table: 2, type: 'event' },
+  { id: '55555', time: '08:30', duration: '00:30', table: 3, type: 'event' },
+  {
+    id: '66666',
+    time: '09:00',
+    duration: '01:00',
+    table: 2,
+    type: 'reservation',
+  },
+  { id: '88888', time: '09:30', duration: '02:30', table: 1, type: 'event' },
+  { id: '33333', time: '11:30', duration: '01:00', table: 2, type: 'event' },
+  { id: '55553', time: '13:00', duration: '00:30', table: 3, type: 'event' },
+  {
+    id: '12222',
+    time: '14:00',
+    duration: '01:00',
+    table: 3,
+    type: 'reservation',
+  },
+  { id: '12344', time: '14:30', duration: '00:30', table: 1, type: 'event' },
+  {
+    id: '23232',
+    time: '15:30',
+    duration: '01:00',
+    table: 2,
+    type: 'reservation',
+  },
+  { id: '54545', time: '16:00', duration: '00:30', table: 1, type: 'event' },
+  {
+    id: '66666',
+    time: '17:30',
+    duration: '01:00',
+    table: 1,
+    type: 'reservation',
+  },
 ];
 
 function getReservation(hour, table) {
   let reservationId = null;
   let reservationType = 'booking';
   for (let reservation of reservations) {
-    if (hour === reservation.time && table === reservation.table) {
+    const startTime = reservation.time;
+    const duration = reservation.duration;
+
+    const startTimeArray = startTime.split(':');
+    const durationArray = duration.split(':');
+
+    let endHour = parseInt(startTimeArray[0]) + parseInt(durationArray[0]);
+    let endMinutes = parseInt(startTimeArray[1]) + parseInt(durationArray[1]);
+
+    if (endMinutes !== 30) {
+      const hours = endMinutes / 60;
+      endHour += hours;
+      endMinutes = '00';
+    }
+    const endTime = endHour + ':' + endMinutes;
+    const endTimeComplex = endTime.padStart(5, '0');
+
+    // console.log(endTime);
+
+    if (
+      (hour === startTime && table === reservation.table) ||
+      (hour > startTime && hour < endTimeComplex && table === reservation.table)
+    ) {
       reservationId = reservation.id;
       if (reservation.type === 'event') {
         reservationType = 'events';
@@ -51,7 +103,8 @@ var hours = [],
   j;
 for (i = 8; i < 20; i++) {
   for (j = 0; j < 2; j++) {
-    hours.push(i + ':' + (j === 0 ? '00' : 30 * j));
+    const hour = i + ':' + (j === 0 ? '00' : 30 * j);
+    hours.push(hour.padStart(5, '0'));
   }
 }
 
