@@ -12,15 +12,31 @@
   margin-bottom: 20px;
 }
 
+.table {
+  background-color: #c7c7c7;
+}
+
+.remote {
+  background-color: #8297f8;
+}
+
 .title {
   font-size: 14;
 }
 
 .order {
   display: flex;
+  margin-bottom: -20px;
   .each {
     margin: 20px;
-    width: 100px;
-    height: 100px;
+    width: 20%;
+    height: 200px;
+    padding: 10px;
   }
+}
+
+.switch {
+  margin-left: 10px;
+  text-align: center;
+  line-height: 40px;
 }
