@@ -17,14 +17,16 @@ class Waiter extends React.Component {
       error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     }),
     tables: PropTypes.array,
+    fetchStatus: PropTypes.func,
   };
 
   componentDidMount() {
     const { fetchTables } = this.props;
     fetchTables();
+    // fetchStatus();
   }
 
-  renderActions(status) {
+  renderActions(status, id, fetchStatus) {
     switch (status) {
       case 'free':
         return (
@@ -52,6 +54,7 @@ class Waiter extends React.Component {
     const {
       loading: { active, error },
       tables,
+      fetchStatus,
     } = this.props;
 
     if (active || !tables.length) {
@@ -95,7 +98,9 @@ class Waiter extends React.Component {
                       </Button>
                     )}
                   </TableCell>
-                  <TableCell>{this.renderActions(row.status)}</TableCell>
+                  <TableCell>
+                    {this.renderActions(row.status, row.id, fetchStatus)}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
