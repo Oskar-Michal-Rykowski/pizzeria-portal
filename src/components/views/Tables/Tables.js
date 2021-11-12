@@ -76,8 +76,6 @@ function getReservation(hour, table) {
     const endTime = endHour + ':' + endMinutes;
     const endTimeComplex = endTime.padStart(5, '0');
 
-    // console.log(endTime);
-
     if (
       (hour === startTime && table === reservation.table) ||
       (hour > startTime && hour < endTimeComplex && table === reservation.table)
