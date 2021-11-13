@@ -10,7 +10,7 @@ import styles from './TablesBookingReservation.module.scss';
 
 export default function TablesBookingReservation() {
   function getIdfromLink() {
-    var viewURL = window.location.href;
+    const viewURL = window.location.href;
     const id = viewURL.split('/').at(-1);
     return id;
   }

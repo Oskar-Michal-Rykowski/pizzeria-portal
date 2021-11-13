@@ -190,10 +190,10 @@ const products = [
 ];
 
 export default function WaiterOrderNew() {
-  const [value, setValue] = React.useState('');
+  const [option, setOption] = React.useState('');
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setOption(event.target.value);
   };
 
   const [expanded, setExpanded] = React.useState('');
@@ -254,7 +254,7 @@ export default function WaiterOrderNew() {
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
-            value={value}
+            value={option}
             onChange={handleChange}
             label="Table"
           >
@@ -297,7 +297,7 @@ export default function WaiterOrderNew() {
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
-            value={value}
+            value={option}
             onChange={handleChange}
             label="Duration"
           >
@@ -340,7 +340,7 @@ export default function WaiterOrderNew() {
                   <Select
                     labelId="demo-simple-select-outlined-label"
                     id="demo-simple-select-outlined"
-                    value={value}
+                    value={option}
                     onChange={handleChange}
                     label="Amount"
                   >

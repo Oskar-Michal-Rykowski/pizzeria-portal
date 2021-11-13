@@ -9,14 +9,14 @@ import Button from '@material-ui/core/Button';
 import styles from './TablesEventReservation.module.scss';
 
 export default function TablesEventReservation() {
-  const [value, setValue] = React.useState('');
+  const [option, setOption] = React.useState('');
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setOption(event.target.value);
   };
 
   function getIdfromLink() {
-    var viewURL = window.location.href;
+    const viewURL = window.location.href;
     const id = viewURL.split('/').at(-1);
     return id;
   }
@@ -40,7 +40,7 @@ export default function TablesEventReservation() {
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
-            value={value}
+            value={option}
             onChange={handleChange}
             label="Table"
           >
@@ -83,7 +83,7 @@ export default function TablesEventReservation() {
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
-            value={value}
+            value={option}
             onChange={handleChange}
             label="Duration"
           >

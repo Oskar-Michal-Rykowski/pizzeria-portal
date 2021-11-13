@@ -16,7 +16,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 function getIdfromLink() {
-  var viewURL = window.location.href;
+  const viewURL = window.location.href;
   const id = viewURL.split('/').at(-1);
   return id;
 }
@@ -196,10 +196,10 @@ const products = [
 ];
 
 export default function WaiterOrder() {
-  const [value, setValue] = React.useState('');
+  const [option, setOption] = React.useState('');
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setOption(event.target.value);
   };
 
   const [expanded, setExpanded] = React.useState('');
@@ -264,7 +264,7 @@ export default function WaiterOrder() {
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
-            value={value}
+            value={option}
             onChange={handleChange}
             label="Table"
           >
@@ -307,7 +307,7 @@ export default function WaiterOrder() {
           <Select
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
-            value={value}
+            value={option}
             onChange={handleChange}
             label="Duration"
           >
@@ -350,7 +350,7 @@ export default function WaiterOrder() {
                   <Select
                     labelId="demo-simple-select-outlined-label"
                     id="demo-simple-select-outlined"
-                    value={value}
+                    value={option}
                     onChange={handleChange}
                     label="Amount"
                   >
