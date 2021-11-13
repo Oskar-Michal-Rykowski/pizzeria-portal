@@ -41,13 +41,13 @@ export const fetchFromAPI = () => {
   };
 };
 
-export const fetchStatusFromAPI = () => {
+export const fetchStatusFromAPI = (status, id) => {
   return (dispatch, getState) => {
     dispatch(fetchStarted());
 
     Axios.post(`${api.url}/api/${api.tables}`)
       .then((res) => {
-        dispatch(fetchStatus(res.data));
+        dispatch(fetchStatus(status, id));
       })
       .catch((err) => {
         dispatch(fetchError(err.message || true));
