@@ -87,14 +87,20 @@ export default function reducer(statePart = [], action = {}) {
       };
     }
     case FETCH_STATUS: {
-      statePart.tables.map((element) => {
+      statePart.data.map((element) => {
         if (element.id === action.payload.id) {
           element.status = action.payload.status;
         }
         return element;
       });
 
-      return [...statePart];
+      return {
+        ...statePart,
+        loading: {
+          active: false,
+          error: false,
+        },
+      };
     }
     default:
       return statePart;
