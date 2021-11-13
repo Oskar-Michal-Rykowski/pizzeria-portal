@@ -14,10 +14,7 @@ import styles from './Login.module.scss';
 
 export default function Login() {
   const [values, setValues] = React.useState({
-    amount: '',
     password: '',
-    weight: '',
-    weightRange: '',
     showPassword: false,
   });
 
@@ -42,11 +39,9 @@ export default function Login() {
           className={clsx(styles.margin, styles.textField, styles.input)}
           variant="outlined"
         >
-          <InputLabel htmlFor="outlined-adornment-password">
-            Password
-          </InputLabel>
+          <InputLabel htmlFor="login-password">Password</InputLabel>
           <OutlinedInput
-            id="outlined-adornment-password"
+            id="login-password"
             type={values.showPassword ? 'text' : 'password'}
             value={values.password}
             onChange={handleChange('password')}

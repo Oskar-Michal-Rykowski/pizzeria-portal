@@ -73,7 +73,8 @@ function getReservation(hour, table) {
       endHour += hours;
       endMinutes = '00';
     }
-    const endTime = endHour + ':' + endMinutes;
+
+    const endTime = `${endHour}:${endMinutes}`;
     const endTimeComplex = endTime.padStart(5, '0');
 
     if (
@@ -96,14 +97,18 @@ function getReservation(hour, table) {
   );
 }
 
-var hours = [],
-  i,
-  j;
-for (i = 8; i < 20; i++) {
-  for (j = 0; j < 2; j++) {
-    const hour = i + ':' + (j === 0 ? '00' : 30 * j);
-    hours.push(hour.padStart(5, '0'));
+function createTimeSet() {
+  const hours = [];
+  const hourStart = 8;
+  const hourEnd = 20;
+
+  for (let i = hourStart; i < hourEnd; i++) {
+    for (let j = 0; j < 2; j++) {
+      const hour = i + ':' + (j === 0 ? '00' : 30 * j);
+      hours.push(hour.padStart(5, '0'));
+    }
   }
+  return hours;
 }
 
 const Tables = () => (
@@ -160,7 +165,7 @@ const Tables = () => (
           </TableRow>
         </TableHead>
         <TableBody>
-          {hours.map((hour) => (
+          {createTimeSet().map((hour) => (
             <TableRow key={hour}>
               <TableCell>{hour}</TableCell>
               <TableCell>{getReservation(hour, 1)}</TableCell>

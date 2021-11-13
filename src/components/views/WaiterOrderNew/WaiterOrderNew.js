@@ -202,31 +202,29 @@ export default function WaiterOrderNew() {
     setExpanded(newExpanded ? panel : false);
   };
 
-  function getProductParams(product) {
+  function renderParamOptions(param) {
+    let options = [];
+    for (let option in param.options) {
+      options.push(param.options[option]);
+    }
+
+    return (
+      <div>
+        {options.map((option) => (
+          <FormControlLabel
+            key={option.label}
+            control={<Checkbox checked={option.default} name={option.label} />}
+            label={`${option.label} $${option.price}`}
+          ></FormControlLabel>
+        ))}
+      </div>
+    );
+  }
+
+  function renderProductParams(product) {
     let params = [];
     for (let param in product.params) {
       params.push(product.params[param]);
-    }
-
-    function getParamOptions(param) {
-      let options = [];
-      for (let option in param.options) {
-        options.push(param.options[option]);
-      }
-
-      return (
-        <div>
-          {options.map((option) => (
-            <FormControlLabel
-              key={option.label}
-              control={
-                <Checkbox checked={option.default} name={option.label} />
-              }
-              label={`${option.label} $${option.price}`}
-            ></FormControlLabel>
-          ))}
-        </div>
-      );
     }
 
     return (
@@ -234,7 +232,7 @@ export default function WaiterOrderNew() {
         {params.map((param) => (
           <FormControl key={param.label} component="fieldset">
             <FormLabel component="legend">{param.label}</FormLabel>
-            <FormGroup>{getParamOptions(param)}</FormGroup>
+            <FormGroup>{renderParamOptions(param)}</FormGroup>
           </FormControl>
         ))}
       </div>
@@ -332,7 +330,7 @@ export default function WaiterOrderNew() {
               </Typography>
             </MuiAccordionSummary>
             <MuiAccordionDetails className={styles.card}>
-              <div>{getProductParams(product)}</div>
+              <div>{renderProductParams(product)}</div>
 
               <div>
                 <FormControl className={styles.input} variant="outlined">
