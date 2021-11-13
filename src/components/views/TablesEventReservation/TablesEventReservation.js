@@ -36,10 +36,10 @@ export default function TablesEventReservation() {
           }}
         />
         <FormControl className={styles.input} variant="outlined">
-          <InputLabel id="demo-simple-select-outlined-label">Table</InputLabel>
+          <InputLabel id="select-reservation-label">Table</InputLabel>
           <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
+            labelId="select-reservation-label"
+            id="select-reservation"
             value={option}
             onChange={handleChange}
             label="Table"
@@ -77,12 +77,10 @@ export default function TablesEventReservation() {
           }}
         />
         <FormControl className={styles.input} variant="outlined">
-          <InputLabel id="demo-simple-select-outlined-label">
-            Duration
-          </InputLabel>
+          <InputLabel id="select-table-duration-label">Duration</InputLabel>
           <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
+            labelId="select-table-duration-label"
+            id="select-table-duration"
             value={option}
             onChange={handleChange}
             label="Duration"

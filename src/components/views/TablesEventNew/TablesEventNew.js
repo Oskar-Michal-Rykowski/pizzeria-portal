@@ -26,10 +26,10 @@ export default function TablesEventNew() {
           variant="outlined"
         />
         <FormControl className={styles.input} variant="outlined">
-          <InputLabel id="demo-simple-select-outlined-label">Table</InputLabel>
+          <InputLabel id="select-event-new-label">Table</InputLabel>
           <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
+            labelId="select-event-new-label"
+            id="select-event-new"
             value={option}
             onChange={handleChange}
             label="Table"
@@ -67,12 +67,10 @@ export default function TablesEventNew() {
           }}
         />
         <FormControl className={styles.input} variant="outlined">
-          <InputLabel id="demo-simple-select-outlined-label">
-            Duration
-          </InputLabel>
+          <InputLabel id="select-table-event-new-label">Duration</InputLabel>
           <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
+            labelId="select-table-event-new-label"
+            id="select-table-event-new"
             value={option}
             onChange={handleChange}
             label="Duration"

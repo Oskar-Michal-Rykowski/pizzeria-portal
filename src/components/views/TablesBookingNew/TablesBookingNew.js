@@ -26,10 +26,10 @@ export default function TablesBookingNew() {
           variant="outlined"
         />
         <FormControl className={styles.input} variant="outlined">
-          <InputLabel id="demo-simple-select-outlined-label">Table</InputLabel>
+          <InputLabel id="select-booking-new-label">Table</InputLabel>
           <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
+            labelId="select-booking-new-label"
+            id="select-booking-new"
             value={option}
             onChange={handleChange}
             label="Table"
@@ -67,12 +67,10 @@ export default function TablesBookingNew() {
           }}
         />
         <FormControl className={styles.input} variant="outlined">
-          <InputLabel id="demo-simple-select-outlined-label">
-            Duration
-          </InputLabel>
+          <InputLabel id="select-tables-booking-new-label">Duration</InputLabel>
           <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
+            labelId="select-tables-booking-new-label"
+            id="select-tables-booking-new"
             value={option}
             onChange={handleChange}
             label="Duration"

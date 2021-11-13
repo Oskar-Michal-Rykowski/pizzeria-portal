@@ -301,12 +301,10 @@ export default function WaiterOrder() {
           }}
         />
         <FormControl className={styles.input} variant="outlined">
-          <InputLabel id="demo-simple-select-outlined-label">
-            Duration
-          </InputLabel>
+          <InputLabel id="selec-duration-label">Duration</InputLabel>
           <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
+            labelId="selec-duration-label"
+            id="selec-duration"
             value={option}
             onChange={handleChange}
             label="Duration"
@@ -344,12 +342,10 @@ export default function WaiterOrder() {
 
               <div>
                 <FormControl className={styles.input} variant="outlined">
-                  <InputLabel id="demo-simple-select-outlined-label">
-                    Amount
-                  </InputLabel>
+                  <InputLabel id="select-waiter-order-label">Amount</InputLabel>
                   <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
+                    labelId="select-waiter-order-label"
+                    id="select-waiter-order"
                     value={option}
                     onChange={handleChange}
                     label="Amount"

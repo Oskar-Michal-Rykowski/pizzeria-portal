@@ -30,10 +30,10 @@ export default function TablesBookingReservation() {
           }}
         />
         <FormControl className={styles.input} variant="outlined">
-          <InputLabel id="demo-simple-select-outlined-label">Table</InputLabel>
+          <InputLabel id="select-tables-reservation-label">Table</InputLabel>
           <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
+            labelId="select-tables-reservation-label"
+            id="select-tables-reservation"
             value={1}
             label="Table"
           >
