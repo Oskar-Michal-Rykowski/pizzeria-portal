@@ -21,7 +21,7 @@ const FETCH_STATUS = createActionName('FETCH_STATUS');
 export const fetchStarted = (payload) => ({ payload, type: FETCH_START });
 export const fetchSuccess = (payload) => ({ payload, type: FETCH_SUCCESS });
 export const fetchError = (payload) => ({ payload, type: FETCH_ERROR });
-export const fetchStatus = (status, id) => ({
+export const changeTableStatus = (status, id) => ({
   payload: { status: status, id: id },
   type: FETCH_STATUS,
 });
@@ -41,13 +41,13 @@ export const fetchFromAPI = () => {
   };
 };
 
-export const fetchStatusFromAPI = (status, id) => {
+export const changeTableStatusInAPI = (status, id) => {
   return (dispatch, getState) => {
     dispatch(fetchStarted());
 
     Axios.post(`${api.url}/api/${api.tables}`)
       .then((res) => {
-        dispatch(fetchStatus(status, id));
+        dispatch(changeTableStatus(status, id));
       })
       .catch((err) => {
         dispatch(fetchError(err.message || true));

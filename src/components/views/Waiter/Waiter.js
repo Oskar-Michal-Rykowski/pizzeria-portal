@@ -17,30 +17,30 @@ class Waiter extends React.Component {
       error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     }),
     tables: PropTypes.array,
-    fetchStatus: PropTypes.func,
+    changeTableStatus: PropTypes.func,
   };
 
   componentDidMount() {
     const { fetchTables } = this.props;
     fetchTables();
-    // fetchStatus();
+    // changeTableStatus();
   }
 
-  renderActions(status, id, fetchStatus) {
+  renderActions(status, id, changeTableStatus) {
     switch (status) {
       case 'free':
         return (
           <>
             <Button
               onClick={() => {
-                fetchStatus('thinking', id);
+                changeTableStatus('thinking', id);
               }}
             >
               thinking
             </Button>
             <Button
               onClick={() => {
-                fetchStatus('ordered', id);
+                changeTableStatus('ordered', id);
               }}
             >
               new order
@@ -51,7 +51,7 @@ class Waiter extends React.Component {
         return (
           <Button
             onClick={() => {
-              fetchStatus('ordered', id);
+              changeTableStatus('ordered', id);
             }}
           >
             new order
@@ -61,7 +61,7 @@ class Waiter extends React.Component {
         return (
           <Button
             onClick={() => {
-              fetchStatus('prepared', id);
+              changeTableStatus('prepared', id);
             }}
           >
             prepared
@@ -71,7 +71,7 @@ class Waiter extends React.Component {
         return (
           <Button
             onClick={() => {
-              fetchStatus('delivered', id);
+              changeTableStatus('delivered', id);
             }}
           >
             delivered
@@ -81,7 +81,7 @@ class Waiter extends React.Component {
         return (
           <Button
             onClick={() => {
-              fetchStatus('paid', id);
+              changeTableStatus('paid', id);
             }}
           >
             paid
@@ -91,7 +91,7 @@ class Waiter extends React.Component {
         return (
           <Button
             onClick={() => {
-              fetchStatus('free', id);
+              changeTableStatus('free', id);
             }}
           >
             free
@@ -106,7 +106,7 @@ class Waiter extends React.Component {
     const {
       loading: { active, error },
       tables,
-      fetchStatus,
+      changeTableStatus,
     } = this.props;
 
     if (active || !tables.length) {
@@ -151,7 +151,7 @@ class Waiter extends React.Component {
                     )}
                   </TableCell>
                   <TableCell>
-                    {this.renderActions(row.status, row.id, fetchStatus)}
+                    {this.renderActions(row.status, row.id, changeTableStatus)}
                   </TableCell>
                 </TableRow>
               ))}
