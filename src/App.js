@@ -18,7 +18,6 @@ import Waiter from './components/views/Waiter/WaiterContainer';
 import WaiterOrderNew from './components/views/WaiterOrderNew/WaiterOrderNew';
 import WaiterOrder from './components/views/WaiterOrder/WaiterOrder';
 import store from './redux/store';
-import { config } from './Config';
 
 const theme = createTheme({
   palette: {
