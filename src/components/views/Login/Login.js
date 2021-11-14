@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 import IconButton from '@material-ui/core/IconButton';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -35,10 +34,7 @@ export default function Login() {
       <h1>Login</h1>
       <form className={styles.root} noValidate autoComplete="off">
         <TextField className={styles.input} label="Login" variant="outlined" />
-        <FormControl
-          className={clsx(styles.margin, styles.textField, styles.input)}
-          variant="outlined"
-        >
+        <FormControl className={styles.input} variant="outlined">
           <InputLabel htmlFor="login-password">Password</InputLabel>
           <OutlinedInput
             id="login-password"
