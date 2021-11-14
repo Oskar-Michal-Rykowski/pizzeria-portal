@@ -29,7 +29,7 @@ const UniversalForm = ({ idReadOnly }) => {
 
   return (
     <div>
-      <form className={styles.pickers} noValidate>
+      <form noValidate>
         {idReadOnly === true ? (
           <TextField
             className={styles.input}
