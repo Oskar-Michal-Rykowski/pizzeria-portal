@@ -7,6 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import { config } from '../../../Config';
 
 import styles from './Tables.module.scss';
 
@@ -73,7 +74,8 @@ function getReservation(hour, table) {
       endHour += hours;
       endMinutes = '00';
     }
-    const endTime = endHour + ':' + endMinutes;
+
+    const endTime = `${endHour}:${endMinutes}`;
     const endTimeComplex = endTime.padStart(5, '0');
 
     if (
@@ -89,21 +91,25 @@ function getReservation(hour, table) {
   return (
     <Link
       className={styles.link}
-      to={`${process.env.PUBLIC_URL}/tables/${reservationType}/${reservationId}`}
+      to={`${config.tables}/${reservationType}/${reservationId}`}
     >
       {reservationId}
     </Link>
   );
 }
 
-var hours = [],
-  i,
-  j;
-for (i = 8; i < 20; i++) {
-  for (j = 0; j < 2; j++) {
-    const hour = i + ':' + (j === 0 ? '00' : 30 * j);
-    hours.push(hour.padStart(5, '0'));
+function createTimeSet() {
+  const hours = [];
+  const hourStart = 8;
+  const hourEnd = 20;
+
+  for (let i = hourStart; i < hourEnd; i++) {
+    for (let j = 0; j < 2; j++) {
+      const hour = i + ':' + (j === 0 ? '00' : 30 * j);
+      hours.push(hour.padStart(5, '0'));
+    }
   }
+  return hours;
 }
 
 const Tables = () => (
@@ -160,7 +166,7 @@ const Tables = () => (
           </TableRow>
         </TableHead>
         <TableBody>
-          {hours.map((hour) => (
+          {createTimeSet().map((hour) => (
             <TableRow key={hour}>
               <TableCell>{hour}</TableCell>
               <TableCell>{getReservation(hour, 1)}</TableCell>
@@ -177,7 +183,7 @@ const Tables = () => (
         variant="contained"
         color="primary"
         component={NavLink}
-        to={`${process.env.PUBLIC_URL}/tables/booking-new`}
+        to={`${config.tablesBookingNew}`}
       >
         New Reservation
       </Button>
@@ -186,7 +192,7 @@ const Tables = () => (
         variant="contained"
         color="primary"
         component={NavLink}
-        to={`${process.env.PUBLIC_URL}/tables/events-new`}
+        to={`${config.tablesEventNew}`}
       >
         New Event
       </Button>
