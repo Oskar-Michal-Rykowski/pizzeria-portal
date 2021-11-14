@@ -14,12 +14,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-
-function getIdfromLink() {
-  const viewURL = window.location.href;
-  const id = viewURL.split('/').at(-1);
-  return id;
-}
+import UniversalForm from '../../features/UniversalForm/UniversalForm';
 
 const products = [
   {
@@ -248,79 +243,7 @@ export default function WaiterOrder() {
   return (
     <div className={styles.component}>
       <h2>Order</h2>
-      <form className={styles.pickers} noValidate>
-        <TextField
-          className={styles.input}
-          id="outlined-disabled"
-          variant="outlined"
-          label="ID"
-          defaultValue={getIdfromLink()}
-          InputProps={{
-            readOnly: true,
-          }}
-        />
-        <FormControl className={styles.input} variant="outlined">
-          <InputLabel id="demo-simple-select-outlined-label">Table</InputLabel>
-          <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
-            value={option}
-            onChange={handleChange}
-            label="Table"
-          >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={1}>1</MenuItem>
-            <MenuItem value={2}>2</MenuItem>
-            <MenuItem value={3}>3</MenuItem>
-          </Select>
-        </FormControl>
-
-        <TextField
-          id="date"
-          label="Date"
-          type="date"
-          defaultValue="2017-05-24"
-          className={styles.input}
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-        <TextField
-          id="time"
-          label="Time"
-          type="time"
-          defaultValue="08:00"
-          className={styles.input}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          inputProps={{
-            step: 300, // 5 min
-          }}
-        />
-        <FormControl className={styles.input} variant="outlined">
-          <InputLabel id="selec-duration-label">Duration</InputLabel>
-          <Select
-            labelId="selec-duration-label"
-            id="selec-duration"
-            value={option}
-            onChange={handleChange}
-            label="Duration"
-          >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={1}>1</MenuItem>
-            <MenuItem value={2}>2</MenuItem>
-            <MenuItem value={3}>3</MenuItem>
-          </Select>
-        </FormControl>
-      </form>
-      <Button className={styles.input} variant="contained" color="primary">
-        Save
-      </Button>
+      <UniversalForm />
       <div>
         {products.map((product) => (
           <MuiAccordion
