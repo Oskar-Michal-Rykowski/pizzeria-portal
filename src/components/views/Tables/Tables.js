@@ -7,6 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import { config } from '../../../Config';
 
 import styles from './Tables.module.scss';
 
@@ -90,7 +91,7 @@ function getReservation(hour, table) {
   return (
     <Link
       className={styles.link}
-      to={`${process.env.PUBLIC_URL}/tables/${reservationType}/${reservationId}`}
+      to={`${config.tables}/${reservationType}/${reservationId}`}
     >
       {reservationId}
     </Link>
@@ -182,7 +183,7 @@ const Tables = () => (
         variant="contained"
         color="primary"
         component={NavLink}
-        to={`${process.env.PUBLIC_URL}/tables/booking-new`}
+        to={`${config.tablesBookingNew}`}
       >
         New Reservation
       </Button>
@@ -191,7 +192,7 @@ const Tables = () => (
         variant="contained"
         color="primary"
         component={NavLink}
-        to={`${process.env.PUBLIC_URL}/tables/events-new`}
+        to={`${config.tablesEventNew}`}
       >
         New Event
       </Button>

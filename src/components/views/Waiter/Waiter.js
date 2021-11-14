@@ -8,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import { NavLink } from 'react-router-dom';
+import { config } from '../../../Config';
 
 const demoContent = [
   { id: '1', status: 'free', order: null },
@@ -65,7 +66,7 @@ const Waiter = () => (
                 {row.order && (
                   <Button
                     component={NavLink}
-                    to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}
+                    to={`${config.waiter}/order/${row.order}`}
                   >
                     {row.order}
                   </Button>
@@ -83,7 +84,7 @@ const Waiter = () => (
         variant="contained"
         color="primary"
         component={NavLink}
-        to={`${process.env.PUBLIC_URL}/waiter/order/new`}
+        to={config.waiterOrderNew}
       >
         New Order
       </Button>

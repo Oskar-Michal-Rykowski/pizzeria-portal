@@ -12,11 +12,11 @@ import TablesBookingReservation from './components/views/TablesBookingReservatio
 import TablesBookingNew from './components/views/TablesBookingNew/TablesBookingNew';
 import TablesEventReservation from './components/views/TablesEventReservation/TablesEventReservation';
 import TablesEventNew from './components/views/TablesEventNew/TablesEventNew';
-
 import Kitchen from './components/views/Kitchen/Kitchen';
 import Waiter from './components/views/Waiter/Waiter';
 import WaiterOrderNew from './components/views/WaiterOrderNew/WaiterOrderNew';
 import WaiterOrder from './components/views/WaiterOrder/WaiterOrder';
+import { config } from './Config';
 
 const theme = createTheme({
   palette: {
@@ -35,61 +35,37 @@ function App() {
         <ThemeProvider theme={theme}>
           <MainLayout>
             <Switch>
+              <Route exact path={config.dashboard} component={Dashboard} />
+              <Route exact path={config.kitchen} component={Kitchen} />
+              <Route exact path={config.login} component={Login} />
+              <Route exact path={config.tables} component={Tables} />
               <Route
                 exact
-                path={`${process.env.PUBLIC_URL}/`}
-                component={Dashboard}
-              />
-              <Route
-                exact
-                path={`${process.env.PUBLIC_URL}/kitchen`}
-                component={Kitchen}
-              />
-              <Route
-                exact
-                path={`${process.env.PUBLIC_URL}/login`}
-                component={Login}
-              />
-              <Route
-                exact
-                path={`${process.env.PUBLIC_URL}/tables`}
-                component={Tables}
-              />
-              <Route
-                exact
-                path={`${process.env.PUBLIC_URL}/tables/booking/:id`}
+                path={config.tablesBookingReservation}
                 component={TablesBookingReservation}
               />
               <Route
                 exact
-                path={`${process.env.PUBLIC_URL}/tables/booking-new`}
+                path={config.tablesBookingNew}
                 component={TablesBookingNew}
               />
               <Route
                 exact
-                path={`${process.env.PUBLIC_URL}/tables/events/:id`}
+                path={config.tablesEventReservation}
                 component={TablesEventReservation}
               />
               <Route
                 exact
-                path={`${process.env.PUBLIC_URL}/tables/events-new`}
+                path={config.tablesEventNew}
                 component={TablesEventNew}
               />
+              <Route exact path={config.waiter} component={Waiter} />
               <Route
                 exact
-                path={`${process.env.PUBLIC_URL}/waiter`}
-                component={Waiter}
-              />
-              <Route
-                exact
-                path={`${process.env.PUBLIC_URL}/waiter/order/new`}
+                path={config.waiterOrderNew}
                 component={WaiterOrderNew}
               />
-              <Route
-                exact
-                path={`${process.env.PUBLIC_URL}/waiter/order/:id`}
-                component={WaiterOrder}
-              />
+              <Route exact path={config.waiterOrder} component={WaiterOrder} />
             </Switch>
           </MainLayout>
         </ThemeProvider>

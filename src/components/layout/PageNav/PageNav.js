@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 import styles from './PageNav.module.scss';
+import { config } from '../../../Config';
 
 const PageNav = () => (
   <nav>
@@ -10,7 +11,7 @@ const PageNav = () => (
       className={styles.link}
       component={NavLink}
       exact
-      to={`${process.env.PUBLIC_URL}/`}
+      to={config.dashboard}
       activeClassName="active"
     >
       Home
@@ -18,7 +19,7 @@ const PageNav = () => (
     <Button
       className={styles.link}
       component={NavLink}
-      to={`${process.env.PUBLIC_URL}/login`}
+      to={config.login}
       activeClassName="active"
     >
       Login
@@ -26,7 +27,7 @@ const PageNav = () => (
     <Button
       className={styles.link}
       component={NavLink}
-      to={`${process.env.PUBLIC_URL}/kitchen`}
+      to={config.kitchen}
       activeClassName="active"
     >
       Kitchen
@@ -34,7 +35,7 @@ const PageNav = () => (
     <Button
       className={styles.link}
       component={NavLink}
-      to={`${process.env.PUBLIC_URL}/tables`}
+      to={config.tables}
       activeClassName="active"
     >
       Tables
@@ -42,7 +43,7 @@ const PageNav = () => (
     <Button
       className={styles.link}
       component={NavLink}
-      to={`${process.env.PUBLIC_URL}/waiter`}
+      to={config.waiter}
       activeClassName="active"
     >
       Waiter
