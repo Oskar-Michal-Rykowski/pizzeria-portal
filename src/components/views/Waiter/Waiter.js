@@ -112,7 +112,7 @@ class Waiter extends React.Component {
     if (active) {
       return (
         <Paper className={styles.component}>
-          <p>Loading...</p>
+          <p>Loading....</p>
         </Paper>
       );
     }
