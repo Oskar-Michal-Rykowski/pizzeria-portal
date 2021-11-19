@@ -126,8 +126,6 @@ class Waiter extends React.Component {
       );
     }
 
-    console.log(tables.length);
-
     if (!tables.length) {
       return (
         <Paper className={styles.component}>
