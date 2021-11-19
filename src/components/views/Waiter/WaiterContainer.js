@@ -12,10 +12,9 @@ const mapStateToProps = (state) => ({
   loading: getLoadingState(state),
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchTables: () => dispatch(fetchFromAPI()),
-  changeTableStatus: (status, id) =>
-    dispatch(changeTableStatusInAPI(status, id)),
-});
+const mapDispatchToProps = {
+  fetchTables: fetchFromAPI,
+  changeTableStatus: changeTableStatusInAPI,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Waiter);
