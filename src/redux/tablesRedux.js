@@ -1,11 +1,9 @@
-// import { StarsOutlined } from '@material-ui/icons';
 import Axios from 'axios';
 import { api } from '../settings';
 
 /* selectors */
 export const getAll = ({ tables }) => tables.data;
 export const getLoadingState = ({ tables }) => tables.loading;
-// export const getTables = ({}) => tables;
 
 /* action name creator */
 const reducerName = 'tables';
@@ -45,7 +43,7 @@ export const changeTableStatusInAPI = (status, id) => {
   return (dispatch, getState) => {
     dispatch(fetchStarted());
 
-    Axios.post(`${api.url}/api/${api.tables}`)
+    Axios.patch(`${api.url}/api/${api.tables}/${id}`)
       .then((res) => {
         dispatch(changeTableStatus(status, id));
       })
@@ -56,7 +54,15 @@ export const changeTableStatusInAPI = (status, id) => {
 };
 
 /* reducer */
-export default function reducer(statePart = [], action = {}) {
+export const initialTableState = {
+  data: [],
+  loading: {
+    active: false,
+    error: false,
+  },
+};
+
+export default function reducer(statePart = initialTableState, action) {
   switch (action.type) {
     case FETCH_START: {
       return {
